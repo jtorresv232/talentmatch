@@ -62,8 +62,8 @@ export default function GapAnalysis() {
           <CardContent className="pt-6">
             <div className="grid grid-cols-2 gap-4 items-end">
               <div className="space-y-1.5">
-                <Label>Candidate *</Label>
-                <Select value={candidateId} onChange={(e) => setCandidateId(e.target.value)} required>
+                <Label htmlFor="candidate-select">Candidate *</Label>
+                <Select id="candidate-select" value={candidateId} onChange={(e) => setCandidateId(e.target.value)} required>
                   <option value="">Select a candidate...</option>
                   {candidates.map((c) => (
                     <option key={c.id} value={c.id}>{c.full_name} — {c.current_role_title}</option>
@@ -71,8 +71,8 @@ export default function GapAnalysis() {
                 </Select>
               </div>
               <div className="space-y-1.5">
-                <Label>Position *</Label>
-                <Select value={positionId} onChange={(e) => setPositionId(e.target.value)} required>
+                <Label htmlFor="position-select">Position *</Label>
+                <Select id="position-select" value={positionId} onChange={(e) => setPositionId(e.target.value)} required>
                   <option value="">Select a position...</option>
                   {positions.map((p) => (
                     <option key={p.id} value={p.id}>{p.title} — {p.department}</option>
