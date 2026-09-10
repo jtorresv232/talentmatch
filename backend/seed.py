@@ -1,5 +1,5 @@
 """
-Seed script — populates 10 candidates and 5 positions.
+Seed script — populates 16 candidates and 8 positions.
 Run from the backend/ directory:  python seed.py
 """
 import asyncio
@@ -170,6 +170,97 @@ CANDIDATES = [
             ("AWS", SkillCategory.cloud, Proficiency.beginner, 1),
         ],
     },
+    {
+        "full_name": "Elena Vasquez",
+        "email": "elena.vasquez@example.com",
+        "years_of_experience": 5,
+        "current_role_title": "Data Engineer",
+        "summary": "Data engineer specializing in batch and streaming pipelines on GCP and AWS.",
+        "skills": [
+            ("Python", SkillCategory.backend, Proficiency.expert, 5),
+            ("Apache Spark", SkillCategory.backend, Proficiency.advanced, 3),
+            ("Airflow", SkillCategory.devops, Proficiency.advanced, 3),
+            ("BigQuery", SkillCategory.database, Proficiency.advanced, 4),
+            ("dbt", SkillCategory.database, Proficiency.intermediate, 2),
+            ("GCP", SkillCategory.cloud, Proficiency.advanced, 4),
+            ("SQL", SkillCategory.database, Proficiency.expert, 5),
+        ],
+    },
+    {
+        "full_name": "Tom Nguyen",
+        "email": "tom.nguyen@example.com",
+        "years_of_experience": 4,
+        "current_role_title": "Mobile Developer",
+        "summary": "Cross-platform mobile developer with React Native and TypeScript expertise.",
+        "skills": [
+            ("React Native", SkillCategory.mobile, Proficiency.advanced, 4),
+            ("TypeScript", SkillCategory.frontend, Proficiency.advanced, 4),
+            ("React", SkillCategory.frontend, Proficiency.intermediate, 3),
+            ("iOS", SkillCategory.mobile, Proficiency.intermediate, 2),
+            ("Android", SkillCategory.mobile, Proficiency.intermediate, 2),
+            ("Jest", SkillCategory.testing, Proficiency.intermediate, 2),
+        ],
+    },
+    {
+        "full_name": "Sarah Mitchell",
+        "email": "sarah.mitchell@example.com",
+        "years_of_experience": 5,
+        "current_role_title": "QA Engineer",
+        "summary": "Test automation specialist with strong Cypress and API testing skills.",
+        "skills": [
+            ("Cypress", SkillCategory.testing, Proficiency.expert, 4),
+            ("Selenium", SkillCategory.testing, Proficiency.advanced, 5),
+            ("pytest", SkillCategory.testing, Proficiency.advanced, 3),
+            ("Postman", SkillCategory.testing, Proficiency.advanced, 4),
+            ("Python", SkillCategory.backend, Proficiency.intermediate, 3),
+            ("Docker", SkillCategory.devops, Proficiency.beginner, 1),
+        ],
+    },
+    {
+        "full_name": "Marcus Johnson",
+        "email": "marcus.johnson@example.com",
+        "years_of_experience": 11,
+        "current_role_title": "Principal Frontend Architect",
+        "summary": "Principal engineer with deep expertise in large-scale React architectures, micro-frontends, and web performance.",
+        "skills": [
+            ("React", SkillCategory.frontend, Proficiency.expert, 9),
+            ("TypeScript", SkillCategory.frontend, Proficiency.expert, 8),
+            ("Next.js", SkillCategory.frontend, Proficiency.expert, 5),
+            ("Webpack", SkillCategory.frontend, Proficiency.advanced, 6),
+            ("Micro-frontends", SkillCategory.architecture, Proficiency.advanced, 3),
+            ("GraphQL", SkillCategory.backend, Proficiency.advanced, 4),
+            ("Jest", SkillCategory.testing, Proficiency.advanced, 7),
+        ],
+    },
+    {
+        "full_name": "Aisha Patel",
+        "email": "aisha.patel@example.com",
+        "years_of_experience": 6,
+        "current_role_title": "Cloud Platform Engineer",
+        "summary": "GCP-focused cloud engineer with infrastructure-as-code and SRE experience.",
+        "skills": [
+            ("GCP", SkillCategory.cloud, Proficiency.expert, 6),
+            ("Terraform", SkillCategory.devops, Proficiency.expert, 5),
+            ("Kubernetes", SkillCategory.devops, Proficiency.advanced, 4),
+            ("Python", SkillCategory.backend, Proficiency.intermediate, 3),
+            ("Docker", SkillCategory.devops, Proficiency.advanced, 5),
+            ("Linux", SkillCategory.devops, Proficiency.advanced, 6),
+        ],
+    },
+    {
+        "full_name": "Diego Fernandez",
+        "email": "diego.fernandez@example.com",
+        "years_of_experience": 2,
+        "current_role_title": "Junior Java Developer",
+        "summary": "Early-career Java developer with solid Spring Boot fundamentals and eagerness to grow.",
+        "skills": [
+            ("Java", SkillCategory.backend, Proficiency.intermediate, 2),
+            ("Spring Boot", SkillCategory.backend, Proficiency.beginner, 1),
+            ("PostgreSQL", SkillCategory.database, Proficiency.beginner, 1),
+            ("Git", SkillCategory.devops, Proficiency.intermediate, 2),
+            ("REST API", SkillCategory.backend, Proficiency.beginner, 1),
+        ],
+    },
 ]
 
 # ---------------------------------------------------------------------------
@@ -268,6 +359,66 @@ POSITIONS = [
             ("AWS", SkillCategory.cloud, True, Proficiency.advanced, Confidence.high),
             ("Linux", SkillCategory.devops, True, Proficiency.advanced, Confidence.high),
             ("GitHub Actions", SkillCategory.devops, False, Proficiency.intermediate, Confidence.medium),
+        ],
+    },
+    {
+        "title": "Senior Data Engineer",
+        "department": "Data Platform",
+        "seniority": Seniority.senior,
+        "status": PositionStatus.open,
+        "description_raw": (
+            "Join our Data Platform team to design and operate large-scale data pipelines. "
+            "You will build ETL/ELT workflows with Apache Spark and Airflow, model data with dbt, "
+            "and store results in BigQuery. Strong SQL and Python skills are essential. "
+            "GCP experience is preferred."
+        ),
+        "skills": [
+            ("Python", SkillCategory.backend, True, Proficiency.advanced, Confidence.high),
+            ("Apache Spark", SkillCategory.backend, True, Proficiency.intermediate, Confidence.high),
+            ("Airflow", SkillCategory.devops, True, Proficiency.intermediate, Confidence.high),
+            ("SQL", SkillCategory.database, True, Proficiency.advanced, Confidence.high),
+            ("BigQuery", SkillCategory.database, False, Proficiency.intermediate, Confidence.medium),
+            ("GCP", SkillCategory.cloud, False, Proficiency.intermediate, Confidence.medium),
+            ("dbt", SkillCategory.database, False, Proficiency.beginner, Confidence.low),
+        ],
+    },
+    {
+        "title": "React Native Mobile Developer",
+        "department": "Mobile Engineering",
+        "seniority": Seniority.mid,
+        "status": PositionStatus.open,
+        "description_raw": (
+            "Build and maintain our cross-platform mobile apps using React Native and TypeScript. "
+            "You will collaborate closely with our backend and design teams to deliver polished iOS and Android experiences. "
+            "Experience with mobile testing and CI pipelines is a plus."
+        ),
+        "skills": [
+            ("React Native", SkillCategory.mobile, True, Proficiency.intermediate, Confidence.high),
+            ("TypeScript", SkillCategory.frontend, True, Proficiency.intermediate, Confidence.high),
+            ("React", SkillCategory.frontend, True, Proficiency.intermediate, Confidence.high),
+            ("iOS", SkillCategory.mobile, False, Proficiency.beginner, Confidence.medium),
+            ("Android", SkillCategory.mobile, False, Proficiency.beginner, Confidence.medium),
+            ("Jest", SkillCategory.testing, False, Proficiency.beginner, Confidence.low),
+        ],
+    },
+    {
+        "title": "QA Lead / Test Automation Engineer",
+        "department": "Quality Engineering",
+        "seniority": Seniority.senior,
+        "status": PositionStatus.open,
+        "description_raw": (
+            "Lead quality engineering for our web platform. "
+            "You will design and own our test automation strategy using Cypress for E2E and pytest for API testing. "
+            "Experience with Selenium, Postman, and CI integration is required. "
+            "Python scripting skills expected."
+        ),
+        "skills": [
+            ("Cypress", SkillCategory.testing, True, Proficiency.advanced, Confidence.high),
+            ("pytest", SkillCategory.testing, True, Proficiency.intermediate, Confidence.high),
+            ("Selenium", SkillCategory.testing, True, Proficiency.intermediate, Confidence.high),
+            ("Postman", SkillCategory.testing, True, Proficiency.intermediate, Confidence.high),
+            ("Python", SkillCategory.backend, False, Proficiency.intermediate, Confidence.medium),
+            ("Docker", SkillCategory.devops, False, Proficiency.beginner, Confidence.low),
         ],
     },
 ]

@@ -23,7 +23,7 @@ Uses LangGraph + Claude to extract skills from job descriptions, recommend candi
 ## Project Structure
 
 ```
-capstone/
+talentmatch/
 ├── CLAUDE.md                  ← you are here
 ├── docker-compose.yml
 ├── specs/

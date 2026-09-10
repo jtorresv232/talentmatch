@@ -221,10 +221,10 @@
 - [x] Stat cards: total candidates, total open positions, top skills in bank
 - [x] Recent candidates list
 
-#### P4-T8 · Capstone Submission Prep
-- [ ] Write `README.md` with: project overview, architecture diagram, setup instructions, demo walkthrough
+#### P4-T8 · Capstone Submission Prep ✅
+- [x] Write `README.md` with: project overview, architecture diagram, setup instructions, demo walkthrough
 - [ ] Record a short demo video script (key flows to show)
-- [ ] Populate seed data with 15+ realistic engineering candidates and 6+ positions
+- [x] Populate seed data with 15+ realistic engineering candidates and 6+ positions
 - [ ] Verify all acceptance criteria from user-stories.md are met
 - [ ] Ensure OpenAPI docs at `/docs` are complete and accurate
 - [ ] Final pass on NFRs (response times, caching, logging)

@@ -385,7 +385,7 @@ Keep recommendations realistic and focused on software engineering growth paths.
 ## 8. Project Structure
 
 ```
-capstone/
+talentmatch/
 ├── backend/
 │   ├── app/
 │   │   ├── api/
