@@ -199,3 +199,26 @@ class PositionListRead(BaseModel):
     created_at: datetime
 
     model_config = {"from_attributes": True}
+
+
+# ---------------------------------------------------------------------------
+# Skill Extraction schemas
+# ---------------------------------------------------------------------------
+
+class SkillExtractionRequest(BaseModel):
+    jd_text: str = Field(..., min_length=10, description="Raw job description text")
+
+
+class ExtractedSkillItem(BaseModel):
+    skill_name: str
+    category: SkillCategory
+    is_required: bool
+    min_proficiency: Proficiency
+    confidence: Confidence
+
+
+class SkillExtractionResponse(BaseModel):
+    skills: list[ExtractedSkillItem]
+    summary: str
+    suggested_seniority: str
+    trace: list[dict]

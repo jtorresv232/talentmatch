@@ -55,10 +55,10 @@
 - [x] Unit tests: `tests/test_positions_api.py`
 
 #### P1-T6 · Seed Data
-- [ ] Create a `seed.py` script that populates:
+- [x] Create a `seed.py` script that populates:
   - 10 candidate profiles (realistic, covering Angular+.NET, React, Node.js, Java, DevOps profiles)
   - 5 open positions (matching the skill areas above)
-- [ ] Include a mix of seniority levels and proficiency gaps
+- [x] Include a mix of seniority levels and proficiency gaps
 
 **Phase 1 Definition of Done:**
 - All CRUD endpoints return correct responses verified via Swagger UI
@@ -75,39 +75,39 @@
 ### Tasks
 
 #### P2-T1 · Anthropic SDK Setup
-- [ ] Add `anthropic` to `requirements.txt`
-- [ ] Create `app/core/llm.py` with a configured Anthropic client (with prompt caching)
-- [ ] Verify API key works with a simple test call
+- [x] Add `anthropic` to `requirements.txt`
+- [x] Create `app/core/llm.py` with a configured Anthropic client (with prompt caching)
+- [x] Verify API key works with a simple test call
 
 #### P2-T2 · LangGraph Setup
-- [ ] Add `langgraph`, `langchain-anthropic` to `requirements.txt`
-- [ ] Create `app/agents/` package
-- [ ] Create `app/agents/base.py` with shared state types and node logging utilities
+- [x] Add `langgraph`, `langchain-anthropic` to `requirements.txt`
+- [x] Create `app/agents/` package
+- [x] Create `app/agents/base.py` with shared state types and node logging utilities
 - [ ] Verify LangGraph imports work correctly
 
 #### P2-T3 · SkillExtractionGraph Implementation
-- [ ] Define `ExtractionState` TypedDict with all input/output fields
-- [ ] Implement node `parse_jd`: clean text, detect encoding issues, basic chunking
-- [ ] Implement node `extract_skills`: Claude call with cached system prompt; parse JSON response
-- [ ] Implement node `validate_schema`: Pydantic validation of Claude output; set retry flag if invalid
-- [ ] Implement conditional edge: if invalid and retries < 2, loop back to `extract_skills` with correction context
-- [ ] Implement node `classify_skills`: map raw skill names to `SkillCategory` enum (rule-based lookup table)
-- [ ] Implement node `generate_summary`: Claude call for role summary and seniority suggestion
-- [ ] Compile the graph and verify it runs end-to-end with a sample JD
+- [x] Define `ExtractionState` TypedDict with all input/output fields
+- [x] Implement node `parse_jd`: clean text, detect encoding issues, basic chunking
+- [x] Implement node `extract_skills`: Claude call with cached system prompt; parse JSON response
+- [x] Implement node `validate_schema`: Pydantic validation of Claude output; set retry flag if invalid
+- [x] Implement conditional edge: if invalid and retries < 2, loop back to `extract_skills` with correction context
+- [x] Implement node `classify_skills`: map raw skill names to `SkillCategory` enum (rule-based lookup table)
+- [x] Implement node `generate_summary`: Claude call for role summary and seniority suggestion
+- [x] Compile the graph and verify it runs end-to-end with a sample JD
 
 #### P2-T4 · Skill Extraction API Endpoints
-- [ ] `POST /api/v1/extract-skills` — standalone extraction, returns structured result (US-301)
-- [ ] `POST /api/v1/positions/{id}/extract-skills` — extract and apply to position (US-302)
+- [x] `POST /api/v1/extract-skills` — standalone extraction, returns structured result (US-301)
+- [x] `POST /api/v1/positions/{id}/extract-skills` — extract and apply to position (US-302)
   - Stores previous skills in `ExtractionHistory` before overwriting
   - Updates `position.required_skills` and `position.ai_summary`
-- [ ] Integration tests: `tests/test_skill_extraction_agent.py`
+- [x] Integration tests: `tests/test_skill_extraction_agent.py`
   - Test with a well-formed JD (Angular + .NET fullstack)
   - Test with a vague/short JD (retry path)
   - Test with a React frontend JD
 
 #### P2-T5 · Prompt Caching Verification
-- [ ] Add logging to confirm cache hit vs. miss on repeated calls
-- [ ] Document cache hit rate in test output
+- [x] Add logging to confirm cache hit vs. miss on repeated calls
+- [x] Document cache hit rate in test output
 
 **Phase 2 Definition of Done:**
 - SkillExtractionGraph runs successfully for 3+ different JD samples
