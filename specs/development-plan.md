@@ -183,43 +183,43 @@
 ### Tasks
 
 #### P4-T1 · Frontend Scaffold
-- [ ] Initialize React 18 + TypeScript + Vite project in `frontend/`
-- [ ] Add TailwindCSS + shadcn/ui
-- [ ] Configure API client (`src/api/client.ts`) pointing to FastAPI backend
-- [ ] Add React Router for page navigation
-- [ ] Verify frontend boots and can call `/health`
+- [x] Initialize React 18 + TypeScript + Vite project in `frontend/`
+- [x] Add TailwindCSS + shadcn/ui
+- [x] Configure API client (`src/api/client.ts`) pointing to FastAPI backend
+- [x] Add React Router for page navigation
+- [x] Verify frontend boots and can call `/health`
 
-#### P4-T2 · Talent Bank Pages
-- [ ] Candidate list page with search/filter controls (US-103)
-- [ ] Candidate profile view with full skill list (US-104)
-- [ ] Add/Edit candidate form with dynamic skill rows (US-101, US-102)
+#### P4-T2 · Talent Bank Pages ✅
+- [x] Candidate list page with search/filter controls (US-103)
+- [x] Candidate profile view with full skill list (US-104)
+- [x] Add/Edit candidate form with dynamic skill rows (US-101, US-102)
 
-#### P4-T3 · Position Pages
-- [ ] Position list grouped by status (US-203, US-602)
-- [ ] Position detail page showing required skills
-- [ ] Add position form with JD text area (US-201)
+#### P4-T3 · Position Pages ✅
+- [x] Position list grouped by status (US-203, US-602)
+- [x] Position detail page showing required skills
+- [x] Add position form with JD text area (US-201)
 
-#### P4-T4 · AI Extraction Interface
-- [ ] Standalone "Extract Skills from JD" page (US-603)
+#### P4-T4 · AI Extraction Interface ✅
+- [x] Standalone "Extract Skills from JD" page (US-603)
   - Large textarea for JD input
   - Submit triggers `POST /api/v1/extract-skills`
   - Results displayed as editable skill table
   - "Apply to Position" button available
-- [ ] Position detail: "Re-extract Skills" button (US-302)
+- [x] Position detail: "Re-extract Skills" button (US-302)
 
-#### P4-T5 · Recommendation Interface
-- [ ] "Find Candidates" button on position detail → calls recommend-candidates (US-401)
-- [ ] Results shown as ranked cards with: match score bar, matched skills chips, rationale (collapsed/expanded) (US-604)
-- [ ] "Find Positions" on candidate profile → calls recommend-positions (US-402)
+#### P4-T5 · Recommendation Interface ✅
+- [x] "Find Candidates" button on position detail → calls recommend-candidates (US-401)
+- [x] Results shown as ranked cards with: match score bar, matched skills chips, rationale (collapsed/expanded) (US-604)
+- [x] "Find Positions" on candidate profile → calls recommend-positions (US-402)
 
-#### P4-T6 · Gap Analysis Interface
-- [ ] Gap analysis view: select candidate + position → show buckets side by side
-- [ ] Verdict badge (Strong / Moderate / Weak / Not Suitable) prominently displayed
-- [ ] Recommendations listed per missing skill
+#### P4-T6 · Gap Analysis Interface ✅
+- [x] Gap analysis view: select candidate + position → show buckets side by side
+- [x] Verdict badge (Strong / Moderate / Weak / Not Suitable) prominently displayed
+- [x] Recommendations listed per missing skill
 
-#### P4-T7 · Dashboard Summary (US-601)
-- [ ] Stat cards: total candidates, total open positions, top skills in bank
-- [ ] Recent candidates list
+#### P4-T7 · Dashboard Summary (US-601) ✅
+- [x] Stat cards: total candidates, total open positions, top skills in bank
+- [x] Recent candidates list
 
 #### P4-T8 · Capstone Submission Prep
 - [ ] Write `README.md` with: project overview, architecture diagram, setup instructions, demo walkthrough
