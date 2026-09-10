@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Write(C:/Users/user/projects/capstone/.claude/commands/*)",
+      "Edit(C:/Users/user/projects/capstone/.claude/commands/*)"
+    ]
+  }
+}
