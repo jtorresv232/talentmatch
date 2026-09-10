@@ -124,46 +124,46 @@
 ### Tasks
 
 #### P3-T1 · Match Scoring Engine (Deterministic)
-- [ ] Create `app/services/scoring.py`
-- [ ] Implement `score_candidate(candidate, position) -> ScoringResult`
+- [x] Create `app/services/scoring.py`
+- [x] Implement `score_candidate(candidate, position) -> ScoringResult`
   - base_score: required skills match percentage × 70
   - proficiency_bonus: proficiency delta sum × 20
   - preferred_bonus: preferred skills match × 10
-- [ ] Unit test scoring edge cases: exact match, zero match, partial proficiency
+- [x] Unit test scoring edge cases: exact match, zero match, partial proficiency
 
 #### P3-T2 · MatchRecommendationGraph Implementation
-- [ ] Define `MatchState` TypedDict
-- [ ] Implement node `load_position_skills`: fetch from DB via service
-- [ ] Implement node `score_all_candidates`: call `scoring.py` for each candidate
-- [ ] Implement node `apply_seniority_filter`: apply experience-based weight adjustment
-- [ ] Implement node `rank_candidates`: sort, take top N, produce matched/missing/partial lists
-- [ ] Implement node `generate_rationales`: batched Claude call for top N rationales (1 API call with multiple candidates in context, not N separate calls)
-- [ ] Implement node `compile_report`: assemble `RecommendationResult` objects and persist to DB
+- [x] Define `MatchState` TypedDict
+- [x] Implement node `load_position_skills`: fetch from DB via service
+- [x] Implement node `score_all_candidates`: call `scoring.py` for each candidate
+- [x] Implement node `apply_seniority_filter`: apply experience-based weight adjustment
+- [x] Implement node `rank_candidates`: sort, take top N, produce matched/missing/partial lists
+- [x] Implement node `generate_rationales`: batched Claude call for top N rationales (1 API call with multiple candidates in context, not N separate calls)
+- [x] Implement node `compile_report`: assemble `RecommendationResult` objects and persist to DB
 - [ ] Compile and test graph
 
 #### P3-T3 · Recommendation API Endpoints
-- [ ] `POST /api/v1/positions/{id}/recommend-candidates` (US-401)
+- [x] `POST /api/v1/positions/{id}/recommend-candidates` (US-401)
   - Query param: `top_n` (default 5)
   - Returns ranked list with scores, matched/missing skills, rationale
-- [ ] `POST /api/v1/candidates/{id}/recommend-positions` (US-402)
+- [x] `POST /api/v1/candidates/{id}/recommend-positions` (US-402)
   - Reuses scoring engine, inverted: score position fit for candidate
-- [ ] Integration tests: `tests/test_match_agent.py`
+- [x] Integration tests: `tests/test_match_agent.py`
   - Test with seed data, verify top candidate is the correct best match
   - Test with no matching candidates, verify graceful empty result
 
 #### P3-T4 · GapAnalysisGraph Implementation
-- [ ] Define `GapState` TypedDict
-- [ ] Implement node `load_pair`: fetch candidate + position from DB
-- [ ] Implement node `diff_skills`: produce `fully_matched`, `partial`, `missing` lists (deterministic)
-- [ ] Implement node `assess_seniority_fit`: check years_of_experience against seniority norms
-- [ ] Implement node `generate_gap_report`: Claude call with cached system prompt; one recommendation per gap
-- [ ] Implement node `produce_verdict`: rule-based verdict from score thresholds
+- [x] Define `GapState` TypedDict
+- [x] Implement node `load_pair`: fetch candidate + position from DB
+- [x] Implement node `diff_skills`: produce `fully_matched`, `partial`, `missing` lists (deterministic)
+- [x] Implement node `assess_seniority_fit`: check years_of_experience against seniority norms
+- [x] Implement node `generate_gap_report`: Claude call with cached system prompt; one recommendation per gap
+- [x] Implement node `produce_verdict`: rule-based verdict from score thresholds
 - [ ] Compile and test graph
 
 #### P3-T5 · Gap Analysis API Endpoints
-- [ ] `POST /api/v1/gap-analysis` — body: `{ candidate_id, position_id }` (US-501)
-- [ ] `POST /api/v1/positions/{id}/batch-gap-analysis` — query param: `top_n` (US-502)
-- [ ] Integration tests: `tests/test_gap_analysis_agent.py`
+- [x] `POST /api/v1/gap-analysis` — body: `{ candidate_id, position_id }` (US-501)
+- [x] `POST /api/v1/positions/{id}/batch-gap-analysis` — query param: `top_n` (US-502)
+- [x] Integration tests: `tests/test_gap_analysis_agent.py`
   - Test strong match: candidate with all skills
   - Test weak match: candidate with no matching skills
   - Test partial: candidate with skills at wrong proficiency level

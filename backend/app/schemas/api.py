@@ -222,3 +222,71 @@ class SkillExtractionResponse(BaseModel):
     summary: str
     suggested_seniority: str
     trace: list[dict]
+
+
+# ---------------------------------------------------------------------------
+# Recommendation schemas
+# ---------------------------------------------------------------------------
+
+class CandidateRecommendationRead(BaseModel):
+    candidate_id: uuid.UUID
+    candidate_name: str
+    current_role_title: str
+    years_of_experience: int
+    match_score: float
+    matched_skills: list[str]
+    missing_skills: list[str]
+    partial_skills: list[str]
+    rationale: str
+    suitability_verdict: str
+
+
+class PositionRecommendationRead(BaseModel):
+    position_id: uuid.UUID
+    position_title: str
+    department: str
+    seniority: Seniority
+    match_score: float
+    matched_skills: list[str]
+    missing_skills: list[str]
+    partial_skills: list[str]
+    rationale: str
+    suitability_verdict: str
+
+
+# ---------------------------------------------------------------------------
+# Gap Analysis schemas
+# ---------------------------------------------------------------------------
+
+class GapAnalysisRequest(BaseModel):
+    candidate_id: uuid.UUID
+    position_id: uuid.UUID
+
+
+class SkillGapItem(BaseModel):
+    skill_name: str
+    min_proficiency: str
+    is_required: bool
+    candidate_proficiency: str | None = None
+
+
+class GapAnalysisResponse(BaseModel):
+    candidate_id: uuid.UUID
+    candidate_name: str
+    position_id: uuid.UUID
+    position_title: str
+    score: float
+    verdict: str
+    seniority_fit: bool
+    seniority_note: str
+    fully_matched: list[SkillGapItem]
+    partial: list[SkillGapItem]
+    missing: list[SkillGapItem]
+    recommendations: list[str]
+    trace: list[dict]
+
+
+class BatchGapAnalysisResponse(BaseModel):
+    position_id: uuid.UUID
+    position_title: str
+    results: list[GapAnalysisResponse]

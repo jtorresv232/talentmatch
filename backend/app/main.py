@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.errors import AppError, app_error_handler
-from app.api.v1 import candidates, extraction, positions
+from app.api.v1 import candidates, extraction, gap_analysis, positions, recommendations
 
 app = FastAPI(
     title="TalentMatch AI",
@@ -29,3 +29,5 @@ async def health():
 app.include_router(candidates.router, prefix="/api/v1")
 app.include_router(positions.router, prefix="/api/v1")
 app.include_router(extraction.router, prefix="/api/v1")
+app.include_router(recommendations.router, prefix="/api/v1")
+app.include_router(gap_analysis.router, prefix="/api/v1")
